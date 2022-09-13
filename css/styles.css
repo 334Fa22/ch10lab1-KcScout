@@ -1,6 +1,6 @@
 /*
-Author: Maria Cruz
-Date: Current Date
+Author: Stephen Rainford
+Date: September 13, 2022
 File Name: styles.css
 */
 
@@ -25,7 +25,7 @@ img {
 /* Style rules for mobile viewport */
 
 /* Hide tab-desk class */
-.tab-desk {
+.tab-desk, #menu-links {
     display: none;
 }
 
@@ -39,6 +39,9 @@ header {
 header h1 {
     font-family: 'DM Serif Display', serif;
     font-style: italic;
+    font-size: 1.5em;
+    padding: 4%;
+    margin-right: 15%;
 }
 
 /* Style rules for navigation area */
@@ -46,25 +49,30 @@ nav {
     background-color: #373684;
 }
 
-nav ul {
-    list-style-type: none;
-    text-align: center;
-}
 
-nav li {
-    display: block;
-    font-size: 2em;
-    border-top: 1px solid #e5e9fc;
-}
 
-nav li a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 0.5em 1em;
-    text-decoration: none;
-}
 
+
+
+.mobile-nav a {
+  color:#fff;
+  text-align: center;
+  font-size: 2em;
+  text-decoration: none;
+  padding: 3%;
+  display: block;
+}
+.mobile-nav a.menu-icon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.menu-icon div {
+  height: 50px;
+  width: 50px;
+  background-color: #373684;
+}
 /* Style rules for main content */
 main {
     padding: 2%;
@@ -98,7 +106,7 @@ main p {
 }
 
 .round {
-    border-radius: 8px; 
+    border-radius: 8px;
 }
 
 aside {
@@ -119,7 +127,7 @@ figure {
 figcaption {
     position: absolute;
     bottom: 0;
-    background: rgba(55, 54, 132, 0.7); 
+    background: rgba(55, 54, 132, 0.7);
     color: #fff;
     width: 100%;
     padding: 5% 0;
@@ -191,7 +199,7 @@ tr:nth-child(odd) {
 }
 
 /* Style rules for form elements */
-fieldset, input  { 
+fieldset, input  {
     margin-bottom: 2%;
 }
 
@@ -227,130 +235,145 @@ footer a {
 
 /* Media Query for Tablet Viewport */
 @media screen and (min-width: 550px), print {
-    
+
     /* Tablet Viewport: Show tab-desk class, hide mobile class */
     .tab-desk {
         display: block;
     }
 
-    .mobile {
+    .mobile, .mobile-nav {
         display: none;
     }
-    
+
     /* Tablet Viewport: Style rule for header content */
+    header h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+    }
     span.tab-desk {
         display: inline;
     }
-    
+
     /* Tablet Viewport: Style rules for nav area */
+    nav ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
     nav li {
         border-top: none;
         display: inline-block;
         border-right: 1px solid #e5e9fc;
         font-size: 1.5em;
     }
-    
+
     nav li:last-child {
         border-right: none;
     }
-    
+
     nav li a {
         padding: 0.25em 0.5em;
+        display: block;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
     }
-    
+
     .grid {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 20px;
     }
-    
+
     aside {
         grid-column: 1 / span 2;
     }
-    
+
     /* Tablet Viewport: Style rule for map */
    .map {
         width: 500px;
         height: 450px;
     }
-    
+
     /* Tablet Viewport: Style rule for form element */
     form {
         width: 70%;
         margin: 0 auto;
     }
-    
+
 }
 
 /* Media Query for Desktop Viewport */
 @media screen and (min-width: 769px), print {
-    
+
     /* Desktop Viewport: Style rule for header */
     header {
         padding: 2%;
     }
-    
+
     /* Desktop Viewport: Style rules for nav area */
     nav li a {
         padding: 0.5em 1.5em;
     }
-    
+
     nav li a:hover {
         color: #373684;
         background-color: #e5e9fc;
+        transform: scale(1.2);
     }
-    
-    /* Desktop Viewport: Style Rules for main content */  
+
+    /* Desktop Viewport: Style Rules for main content */
     #info ul {
         margin-left: 5%;
     }
-    
+
     main h3 {
         font-size: 1.5em;
     }
-    
+
     #piano, #guitar, #violin {
         width: 29%;
         float: left;
         margin: 0 2%;
     }
-    
+
     .grid {
         grid-template-columns: auto auto auto auto;
     }
-    
+
     figcaption {
         font-size: 1em;
     }
-    
+
     aside {
         grid-column: 1 / span 4;
     }
-    
+
     /* Style rule for table */
     table {
         width: 70%;
     }
-    
+
     /* Desktop Viewport: Style rules for form elements */
     .form-grid {
         display: grid;
         grid-template-columns: auto auto;
-        grid-gap: 20px; 
+        grid-gap: 20px;
     }
-    
+
     .btn {
         grid-column: 1 / span 2;
     }
-    
+
 }
 
 /* Media Query for Print */
 @media print {
-    
+
     body {
         background-color: #fff;
         color: #000;
     }
-    
+
 }
